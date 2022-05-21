@@ -1,0 +1,63 @@
+import random
+
+A = "O"
+B = "X"
+E = ['*', '*', '*', '*', '*', '*', '*', '*', '*']
+def AC():
+    print(E[0]+"|"+E[1]+"|"+E[2])
+    print("------")
+    print(E[3]+"|"+E[4]+"|"+E[5])
+    print("------")
+    print(E[6]+"|"+E[7]+"|"+E[8])
+
+def game():
+    D = 0
+    while True:
+        if D == 5:
+            break
+        C = int(input())
+        E[C] = A
+        AC()
+        if E[0] == E[3] == E[6] == "O":
+            break
+        elif E[0] == E[1] == E[2] == "0":
+            break
+        elif E[1] == E[4] == E[7] == "O":
+            break
+        elif E[2] == E[5] == E[8] == "O":
+            break
+        elif E[0] == E[4] == E[8] == "O":
+            break
+        elif E[2] == E[4] == E[6] == "O":
+            break
+        elif E[3] == E[4] == E[5] == "O":
+            break
+        elif E[6] == E[7] == E[8] == "O":
+            break
+        D += 1
+        if D == 5:
+            break
+        print(D)
+        E[random.randint(0,8)] = B
+        AC()
+        if E[0] == E[3] == E[6] == "X":
+            break
+        elif E[0] == E[1] == E[2] == "X":
+            break
+        elif E[1] == E[4] == E[7] == "X":
+            break
+        elif E[2] == E[5] == E[8] == "X":
+            break
+        elif E[0] == E[4] == E[8] == "X":
+            break
+        elif E[2] == E[4] == E[6] == "X":
+            break
+        elif E[3] == E[4] == E[5] == "X":
+            break
+        elif E[6] == E[7] == E[8] == "X":
+            break
+
+    if D == 5:
+        return
+AC()
+game()
